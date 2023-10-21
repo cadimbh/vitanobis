@@ -1451,27 +1451,17 @@ Uma fórmula 100% natural capaz de restaurar o tecido cartilaginoso do nosso cor
 <script id="elementor-frontend-js-before">
 var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Celular em modo retrato","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Celular em modo paisagem","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Retrato","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Paisagem do tablet","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.16.6","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"additional_custom_breakpoints":true,"container":true,"e_swiper_latest":true,"container_grid":true,"hello-theme-header-footer":true,"landing-pages":true,"e_global_styleguide":true},"urls":{"assets":"https:\/\/storeprosell.com\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"title","hello_footer_logo_type":"logo"},"post":{"id":301,"title":"Ora%20Pro%20N%C3%B3bis%20Original%20%E2%80%93%20storeprosell.com","excerpt":"","featuredImage":false}};
 </script>
-	
-<script src="js/frontend.min.js" id="elementor-frontend-js"></script>
-if (window.location.hash === "#no-back") {
-    // Remove o hash "#no-back" da URL
-    history.replaceState({}, document.title, window.location.pathname + window.location.search);
-
-    // Obtém a URL atual
-    var currentURL = window.location.href;
-
-    // Verifica se já existe um parâmetro 'src' na URL
-    if (currentURL.includes("src=")) {
-        // Adiciona 'back_home' ao valor do parâmetro 'src'
-        currentURL = currentURL.replace(/(src=)[^&]*/, "$1back_home");
-    } else {
-        // Se não existir, adiciona 'src=back_home' à URL
-        currentURL += (currentURL.includes("?") ? "&" : "?") + "src=back_home";
+<script>
+window.onpopstate = function (event) {
+    // Verifica se o evento de popstate (navegação de voltar) ocorreu
+    if (event.state && event.state.page === "nutrinobis") {
+        // Redireciona para https://oferta.nutrinobis.com.br/
+        window.location.href = "https://oferta.nutrinobis.com.br/";
     }
+};
 
-    // Redireciona para o site desejado (https://oferta.nutrinobis.com.br/)
-    window.location.href = "https://oferta.nutrinobis.com.br" + currentURL;
-}
-
+// Adiciona uma entrada no histórico para a página atual
+history.pushState({ page: "nutrinobis" }, null, null);
+</script>
 
 </body></html>
